@@ -8,7 +8,11 @@
     "scheme": "mobileboilerplate",
     "userInterfaceStyle": "automatic",
     "ios": {
-      "icon": "./assets/expo.icon"
+      "icon": "./assets/expo.icon",
+      "bundleIdentifier": "com.anonymous.mobileboilerplate",
+      "config": {
+        "usesNonExemptEncryption": false
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -17,6 +21,7 @@
         "backgroundImage": "./assets/images/android-icon-background.png",
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
+      "package": "com.anonymous.mobileboilerplate",
       "predictiveBackGestureEnabled": false
     },
     "web": {
@@ -31,6 +36,33 @@
           "backgroundColor": "#208AEF",
           "image": "./assets/images/splash-icon.png",
           "imageWidth": 76
+        }
+      ],
+      [
+        "expo-secure-store",
+        {
+          "faceIDPermission": "Allow $(PRODUCT_NAME) to access your Face ID biometric data."
+        }
+      ],
+      [
+        "expo-local-authentication",
+        {
+          "faceIDPermission": "Allow $(PRODUCT_NAME) to use Face ID for biometric authentication."
+        }
+      ],
+      [
+        "react-native-auth0",
+        {
+          "domain": "mobile-boilerplate-dev.ca.auth0.com",
+          "customScheme": "mobileboilerplate"
+        }
+      ],
+      [
+        "@sentry/react-native/expo",
+        {
+          "url": "https://sentry.io/",
+          "project": "mobile-boilerplate",
+          "organization": "jeremie-bardon"
         }
       ]
     ],
